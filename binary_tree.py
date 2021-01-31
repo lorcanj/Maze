@@ -1,10 +1,10 @@
-import Grid
-import Cell
+from Grid import Grid
+from Cell import Cell
 import random
 class BinaryTree:
 
-    def on(self, grid):
-        for cell in grid.each_cell:
+    def on(grid):
+        for cell in grid.each_cell():
             neighbours = []
             if cell.north:
                 neighbours.append(cell.north)
