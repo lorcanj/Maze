@@ -36,3 +36,4 @@ class Cell:
             list_of_neighbours.append(east)
         if west:
             list_of_neighbours.append(west)
+        return list_of_neighbours
