@@ -1,6 +1,6 @@
 from Grid import Grid
 from Cell import Cell
-import random
+from random import random
 class BinaryTree:
 
     def on(grid):
@@ -11,7 +11,8 @@ class BinaryTree:
             if cell.east:
                 neighbours.append(cell.east)
             index = int(random() * len(neighbours))
-            neighbour = neighbours[index]
+            if len(neighbours) != 0:
+                neighbour = neighbours[index]
             if neighbour:
                 cell.link(neighbour)
         return grid
