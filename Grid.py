@@ -3,6 +3,40 @@ import random
 
 class Grid:
     
+    def __str__(self):
+        output = "+" + "---+" * self.columns + "\n"
+
+        for row in self.each_row():
+            top = "|"
+            bottom = "+"
+
+            for cell in row:
+                if not cell:
+                    cell = Cell(-1, 1)
+                body = "   "
+                if cell.is_linked(cell.east):
+                    east_boundary = " "
+                else:
+                    east_boundary = "|"
+                body += east_boundary
+                top += body
+
+                if cell.is_linked(cell.south):
+                    south_boundary = "   "
+                else:
+                    south_boundary = "---"
+                corner = "+"
+                south_boundary += corner
+                bottom += south_boundary
+            
+            top += "\n"
+            output += top
+
+            bottom += "\n"
+            output += bottom
+
+        return output
+
     def each_row(self):
         for row in range(self.rows):
             yield self.plane_grid[row]

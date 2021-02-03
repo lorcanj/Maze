@@ -24,7 +24,13 @@ class Cell:
         return list(self.links.keys())
 
     def is_linked(self, cell):
-        return self.links.key(cell)
+        if not cell:
+            return False
+        # might need to check this
+        if cell in self.links:
+            return True
+        return False
+        #return self.links.get(cell)
 
     def neighbours(self):
         list_of_neighbours = []
