@@ -1,3 +1,3 @@
 # Maze
 
-Am following the book Mazes for Programmers and attempting to implement in Python from Ruby
+Following the book Mazes for Programmers and implementing in Python from Ruby
