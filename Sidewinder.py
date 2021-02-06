@@ -59,9 +59,6 @@ class Sidewinder:
                         break
                 if coin_flip == 1:
                     if not east_barrier:
-                        #if len(run) == 1:
-                        #    cell.link(cell.east)
-                        #else:
                         for i in range(len(run) - 1):
                             run[i].link(run[i].east)
                     if not north_barrier:
