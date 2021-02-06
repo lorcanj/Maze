@@ -32,8 +32,42 @@ class Sidewinder:
         return grid
 
 
-        def on_update(grid):
-            
-            
-            #this is a a test
+    def on_update(grid):
+        # 0 is tails
+        # 1 is heads
+        for row in grid.each_row():
+            run = []
+
+            for cell in row:
+                run.append(cell)
+                north_barrier = False
+                east_barrier = False
+                if cell.north is None:
+                    north_barrier = True
+                if cell.east is None:
+                    east_barrier = True
+                coin_flip = randint(0,1)
+
+                if north_barrier and not east_barrier:
+                    cell.link(cell.east)
+                if east_barrier and not north_barrier:
+                    cell.link(cell.north)
+                    if len(run) > 1:
+                        for i in range(len(run) - 1):
+                            run[i].link(run[i].east)
+                        run = []
+                        break
+                if coin_flip == 1:
+                    if not east_barrier:
+                        #if len(run) == 1:
+                        #    cell.link(cell.east)
+                        #else:
+                        for i in range(len(run) - 1):
+                            run[i].link(run[i].east)
+                    if not north_barrier:
+                        index = int(random() * len(run))
+                        run[index].link(run[index].north)
+                    run = []
+
+        return grid
             
