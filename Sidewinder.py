@@ -4,6 +4,8 @@ from random import random, randint
 
 class Sidewinder:
 
+
+    #this one is incorrect
     def on(grid):
         # 0 is tails
         # 1 is heads

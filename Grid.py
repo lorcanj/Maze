@@ -1,5 +1,6 @@
 from Cell import Cell
 import random
+from PIL import Image
 
 class Grid:
     
@@ -37,6 +38,15 @@ class Grid:
 
         return output
 
+    def to_png(self, cell_size=10):
+        img_width = cell_size * self.columns
+        img_height = cell_size * self.rows
+
+        background = (10,50,90)
+
+        Image.matrix
+
+
     def each_row(self):
         for row in range(self.rows):
             yield self.plane_grid[row]
@@ -47,7 +57,6 @@ class Grid:
                 yield cell
 
     def prepare_grid(self):
-        # need to create an empty matrix which I then fill with cells NEED TO CHANGE THIS HERE
         
         return[[Cell(row, column) for column in range(self.columns)] for row in range(self.rows)]
         """
@@ -93,7 +102,7 @@ class Grid:
     def size(self):
         return self.rows * self.columns
 
-    
+
     
 
         
