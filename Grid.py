@@ -43,7 +43,6 @@ class Grid:
 
     def each_cell(self):
         for row in self.each_row():
-            # the cell should be a Cell object and not an int!!!!
             for cell in row:
                 yield cell
 
