@@ -39,6 +39,7 @@ class Grid:
         return output
 
     def to_png(self, cell_size=10):
+        # need to complete this once have found a good library for pngs
         img_width = cell_size * self.columns
         img_height = cell_size * self.rows
 
