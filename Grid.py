@@ -4,6 +4,10 @@ from PIL import Image
 
 class Grid:
     
+
+    def contents_of(self, cell):
+        " "
+
     def __str__(self):
         output = "+" + "---+" * self.columns + "\n"
 
@@ -14,7 +18,7 @@ class Grid:
             for cell in row:
                 if not cell:
                     cell = Cell(-1, 1)
-                body = "   "
+                body = f" {self.contents_of(cell)} "
                 if cell.is_linked(cell.east):
                     east_boundary = " "
                 else:
