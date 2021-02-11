@@ -18,8 +18,11 @@ class Distance_Grid(Grid):
     def contents_of(self, cell):
         #if self.return_distance(linked) is None
         #and self.distances[cell]
+        # am missing something here as need to update this
+        #
         if self.get_distance() is not None:
             return str(self.get_distance().return_distance(cell))
+        # the below branch is never hit and so will never properly add the space for the proper formatting
         else:
             return super().contents_of(cell)
             
