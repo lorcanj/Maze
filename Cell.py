@@ -48,6 +48,7 @@ class Cell:
         return list_of_neighbours
 
     def distances(self):
+        # need to update this as linked is not currently being picked up as anything
         distances = Distances(self)
         frontier = [self]
 
@@ -58,7 +59,6 @@ class Cell:
                 for linked in cell.links:
                     if distances.return_distance(linked) is None and distances.return_distance(cell) is not None:
                         distances.record_distance(linked, distances.return_distance(cell) + 1)
-                        #distances[linked] = distances[cell] + 1
                         new_frontier.append(linked)
             frontier = new_frontier
         

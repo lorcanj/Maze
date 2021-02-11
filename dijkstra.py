@@ -11,6 +11,6 @@ start = grid.plane_grid[0][0]
 #distances
 #  finish writing the above
 distance = start.distances()
-grid.distances = distance
+grid.set_distance(distance)
 
 print(str(grid))
