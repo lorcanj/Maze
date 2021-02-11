@@ -19,9 +19,9 @@ class Distance_Grid(Grid):
         #if self.return_distance(linked) is None
         #and self.distances[cell]
         # am missing something here as need to update this
-        #
         if self.get_distance() is not None:
-            return str(self.get_distance().return_distance(cell))
+            return str(self.get_distance().return_distance(cell)).center(3)
+            #return format(self.distances[cell], "02X").center(3)
         # the below branch is never hit and so will never properly add the space for the proper formatting
         else:
             return super().contents_of(cell)
