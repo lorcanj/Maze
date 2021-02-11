@@ -1,10 +1,16 @@
 from Distance_Grid import Distance_Grid
-from Binary_tree import Binary_tree
+from Binary_tree import BinaryTree
+from Cell import Cell
+
 
 grid = Distance_Grid(5, 5)
-Binary_tree.on(grid)
+BinaryTree.on(grid)
 
-start = grid[0, 0]
+
+start = grid.plane_grid[0][0]
 #distances
 #  finish writing the above
-grid.distances = distances
+distance = start.distances()
+grid.distances = distance
+
+print(str(grid))

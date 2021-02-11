@@ -56,10 +56,10 @@ class Cell:
 
             for cell in frontier:
                 for linked in cell.links:
-                    if distances[linked]:
-                        next
-                    distances[linked] = distances[cell] + 1
-                    new_frontier.append(linked)
+                    if distances.return_distance(linked) is None and distances.return_distance(cell) is not None:
+                        distances.record_distance(linked, distances.return_distance(cell) + 1)
+                        #distances[linked] = distances[cell] + 1
+                        new_frontier.append(linked)
             frontier = new_frontier
         
         return distances

@@ -6,7 +6,7 @@ class Grid:
     
 
     def contents_of(self, cell):
-        " "
+        return "  "
 
     def __str__(self):
         output = "+" + "---+" * self.columns + "\n"
