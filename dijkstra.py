@@ -3,7 +3,7 @@ from Binary_tree import BinaryTree
 from Cell import Cell
 
 
-grid = Distance_Grid(5, 5)
+grid = Distance_Grid(10, 10)
 BinaryTree.on(grid)
 
 

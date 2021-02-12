@@ -1,3 +1,0 @@
-import png
-
-help(png)
