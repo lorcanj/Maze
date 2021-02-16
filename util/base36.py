@@ -3,8 +3,9 @@
 
 
 def base36encode(number):
+    # changed this as was throwing error when no number to convert
     if not isinstance(number, (int)):
-        raise TypeError('number must be an integer')
+        return "  "
     if number < 0:
         raise ValueError('number must be positive')
 
