@@ -30,3 +30,17 @@ class Distances:
         
         return breadcrumbs
 
+    def longest_path(self):
+        max_distance = 0
+        max_cell = self.root
+
+        for cell in self.cells:
+            if self.return_distance(cell) > max_distance:
+                max_cell = cell
+                max_distance = self.return_distance(cell)
+        
+        return max_cell
+
+
+    
+
