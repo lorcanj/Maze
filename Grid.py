@@ -63,16 +63,16 @@ class Grid:
             y2 = (cell.row + 1) * cell_size
 
             if cell.north is None:
-                draw.line((x1,y1,x2, y1), wall, 1)
+                draw.line([(x1,y1), (x2, y1)], wall, 1)
             
             if cell.west is None:
-                draw.line((x1, y1, x1, y2), wall, 1)
+                draw.line([(x1, y1), (x1, y2)], wall, 1)
             
             if not cell.is_linked(cell.east):
-                draw.line((x2, y1, x2, y2), wall, 1)
+                draw.line([(x2, y1), (x2, y2)], wall, 1)
 
             if not cell.is_linked(cell.south):
-                draw.line((x1, y2, x2, y2), wall, 1)
+                draw.line([(x1, y2), (x2, y2)], wall, 1)
 
         return img
 
