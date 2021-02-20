@@ -30,7 +30,9 @@ class Distances:
         
         return breadcrumbs
 
-    def path_to(self, start, end):
+
+    #need to change the below to use proper python way
+    def path_to_with_end(self, start, end):
         current = start
         breadcrumbs = Distances(end)
         breadcrumbs.cells[current] = self.cells[current]

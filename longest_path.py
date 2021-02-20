@@ -22,6 +22,6 @@ grid.set_distance(new_distances)
 
 goal = new_distances.longest_path()
 
-grid.distances = new_distances.path_to(goal, new_start)
+grid.distances = new_distances.path_to_with_end(goal, new_start)
 
 print(str(grid))

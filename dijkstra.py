@@ -3,6 +3,7 @@ from Binary_tree import BinaryTree
 from Cell import Cell
 
 
+
 grid = Distance_Grid(5, 5)
 BinaryTree.on(grid)
 
@@ -13,6 +14,12 @@ grid.set_distance(distance)
 
 print(str(grid))
 
+img = grid.to_png()
+img.save("maze.png")
+
 grid.distances = distance.path_to(grid.plane_grid[grid.rows - 1][0])
 
 print(str(grid))
+
+
+

@@ -1,6 +1,7 @@
 from Cell import Cell
 import random
-from PIL import Image
+from PIL import Image, ImageDraw
+import png
 
 class Grid:
     
@@ -46,9 +47,33 @@ class Grid:
         img_width = cell_size * self.columns
         img_height = cell_size * self.rows
 
-        background = (10,50,90)
+        background = (0,0,0)
+        wall = (255,255,255)
 
-        #Image.matrix
+        img = Image.new("RGB", (img_width + 1, img_height + 1), background)
+
+        draw = ImageDraw.Draw(img)
+
+        for cell in self.each_cell():
+            x1 = cell.column * cell_size
+            y1 = cell.row * cell_size
+
+            x2 = (cell.column + 1) * cell_size
+            y2 = (cell.column + 1) * cell_size
+
+            if not cell.north:
+                draw.line([(x1,y1), (x2, y1)], wall, 1)
+            
+            if not cell.west:
+                draw.line([(x1, y1), (x1, y2)], wall, 1)
+            
+            if not cell.is_linked(cell.east):
+                draw.line([(x2, y1), (x2, y2)], wall, 1)
+
+            if not cell.is_linked(cell.south):
+                draw.line([(x1, y2), (x2, y2)], wall, 1)
+                
+        return img
 
 
     def each_row(self):
