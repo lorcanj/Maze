@@ -13,7 +13,6 @@ grid.set_distance(distance)
 
 print(str(grid))
 
-
 grid.distances = distance.path_to(grid.plane_grid[grid.rows - 1][0])
 
 print(str(grid))

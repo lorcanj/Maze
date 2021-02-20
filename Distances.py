@@ -15,12 +15,26 @@ class Distances:
     def return_cells(self):
         return self.cells.keys
 
-    def path_to(self, goal):
-        current = goal
-
-        breadcrumbs = Distances(self.root)
+    def path_to(self, start):
+        current = start
+        start = self.root
+        breadcrumbs = Distances(start)
         breadcrumbs.cells[current] = self.cells[current]
+         
+        while self.cells[current] != 0:
+
+            for link in current.links:
+                if self.cells[link] + 1 == self.cells[current]:
+                    breadcrumbs.cells[link] = self.cells[link]
+                    current = link
         
+        return breadcrumbs
+
+    def path_to(self, start, end):
+        current = start
+        breadcrumbs = Distances(end)
+        breadcrumbs.cells[current] = self.cells[current]
+         
         while self.cells[current] != 0:
 
             for link in current.links:
@@ -36,8 +50,9 @@ class Distances:
 
         for cell in self.cells:
             if self.return_distance(cell) > max_distance:
-                max_cell = cell
                 max_distance = self.return_distance(cell)
+                max_cell = cell
+                
         
         return max_cell
 
