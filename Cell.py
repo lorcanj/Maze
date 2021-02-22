@@ -38,19 +38,19 @@ class Cell:
 
     def neighbours(self):
         list_of_neighbours = []
-        if north:
-            list_of_neighbours.append(north)
-        if south:
-            list_of_neighbours.append(south)
-        if east:
-            list_of_neighbours.append(east)
-        if west:
-            list_of_neighbours.append(west)
+        if self.north:
+            list_of_neighbours.append(self.north)
+        if self.south:
+            list_of_neighbours.append(self.south)
+        if self.east:
+            list_of_neighbours.append(self.east)
+        if self.west:
+            list_of_neighbours.append(self.west)
         return list_of_neighbours
 
     def random_neighbour(self):
         neighbours = self.neighbours()
-        number_of_neighbours = len(neighbours)
+        number_of_neighbours = len(neighbours) - 1
         random_number = randint(0, number_of_neighbours)
         return neighbours[random_number]
 

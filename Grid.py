@@ -1,7 +1,6 @@
 from Cell import Cell
-import random
+from random import random
 from PIL import Image, ImageDraw
-import png
 
 class Grid:
     
@@ -45,6 +44,7 @@ class Grid:
 
     def to_png(self, cell_size=10):
         # need to complete this once have found a good library for pngs
+        cell_size = int(cell_size)
         img_width = cell_size * self.columns
         img_height = cell_size * self.rows
 
@@ -89,15 +89,7 @@ class Grid:
     def prepare_grid(self):
         
         return[[Cell(row, column) for column in range(self.columns)] for row in range(self.rows)]
-        """
-        # this would not work as the elements in the 2d list were not
-        # being updated to the cell type
-        matrix = [[0]* self.columns] * self.rows
-        for i in range(self.columns - 1):
-            for j in range(self.rows - 1):
-                matrix[i][j] = Cell(i, j)
-        return matrix
-        """
+        
     
     def configure_cells(self):
         for cell in self.each_cell():

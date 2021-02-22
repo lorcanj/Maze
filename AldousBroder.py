@@ -3,7 +3,7 @@ from Grid import Grid
 
 class AldousBroder:
 
-    def on(self, grid):
+    def on(grid):
         cell = grid.random_cell()
         unvisited = grid.size() - 1
 
@@ -12,7 +12,7 @@ class AldousBroder:
 
             if not bool(neighbour.links):
                 cell.link(neighbour)
-                unvisited = -1
+                unvisited = unvisited -1
             
             cell = neighbour
         
