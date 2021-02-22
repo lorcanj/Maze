@@ -1,4 +1,5 @@
 from Distances import Distances
+from random import randint
 
 
 class Cell:
@@ -46,6 +47,13 @@ class Cell:
         if west:
             list_of_neighbours.append(west)
         return list_of_neighbours
+
+    def random_neighbour(self):
+        neighbours = self.neighbours()
+        number_of_neighbours = len(neighbours)
+        random_number = randint(0, number_of_neighbours)
+        return neighbours[random_number]
+
 
     def distances(self):
         # need to update this as linked is not currently being picked up as anything
